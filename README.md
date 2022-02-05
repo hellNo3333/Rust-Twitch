@@ -1,4 +1,4 @@
-# Rust-Twitch
+# twitch-drop-bot
 
 a fork of a python selenium-based twitch drop bot.
 
