@@ -16,7 +16,7 @@ download here: https://chromedriver.chromium.org/
 you must make sure that you have chrome installed and the chromedriver version matches with your chrome installation.
 create the `drivers` directory and drop the chromedriver executable there.
 
-# memory Leaks
+# memory leaks
 
 this script can be run in low memory environments (e.g. ubuntu virtual private server running xfce on 2gb of memory) but webdriver memory leaks will eventually crash your program. in my experience, chrome seems to handle memory leaks more efficiently than firefox, but will still crash after hours of usage. because of that, you may want to set the `anti_leak` variable in `API.py` to `True`.
 
