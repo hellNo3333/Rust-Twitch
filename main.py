@@ -1,23 +1,39 @@
 from selenium import webdriver
-from threading import Thread
 import time
 from API import API
+import sys
+import os
 
-PATH = r"driver/msedgedriver.exe"
-driver = webdriver.Edge(PATH)
-API = API(driver)
+def main():
+	res = False
+	driver = webdriver.Chrome("driver" + os.path.sep + "chromedriver")
+	Api = API(driver)
+	driver.get("https://www.twitch.tv/")
 
-while True:
-    for x in API.StreamerList:
-        if API.StreamerList[x] < 2:
-            if API.gotoStreamer(x):
-                if API.CreateTimer(x):
-                    if API.BagItem():
-                        print("Bagged {} item".format(x))
-                    else:
-                        print("Missed item")
-        time.sleep(2)
+	x = True
 
+	try:
+		while x:
+			for x in Api.StreamerList:
+				if Api.StreamerList[x] < Api.minutesToWatch:
+					if Api.CreateTimer(x):
+						if Api.BagItem():
+							print("Bagged {} item".format(x))
+						else:
+							print("Missed item")
 
+			time.sleep(2)
+
+	except Exception as e:
+		print(e)
+		with open(str(time.time()) + ".txt", 'w') as f:
+			f.write(str(e))
+		if not res:
+			res = True
+			driver.close()
+			driver.quit()
+			main()
+
+main()
 
 
