@@ -16,7 +16,7 @@ class API:
 		self.TwitchPath = "https://twitch.tv/"
 		self.Live = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
 		self.isRust = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
-		self.acceptMature = '//*[@id="root"]/div/div[2]/div[1]/main/div[2]/div[3]/div/div/div[2]/div/div[2]/div/div/div/div/div[5]/div/div[3]/button/div'
+		self.acceptMature = '//button[@data-a-target="player-overlay-mature-accept"]/div'
 		self.Cookie = cookies
 		self.driver = driver
 		self.LoggingIn = False
