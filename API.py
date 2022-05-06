@@ -1,17 +1,22 @@
 from cookie import cookies
-from selenium.common.exceptions import NoSuchElementException     
+from selenium.common.exceptions import NoSuchElementException  
+from selenium.webdriver.chrome.options import Options   
 from selenium import webdriver   
 import time
 import os
 
-anti_leak = False
+anti_leak = True
+
+options = Options()
+options.add_argument("--mute-audio")
+options.add_argument("--headless")
 
 class API:
 	def __init__(self, driver):
 		self.TwitchPath = "https://twitch.tv/"
 		self.Live = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
 		self.isRust = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
-		self.acceptMature = '//*[@id="root"]/div/div[2]/div[1]/main/div[2]/div[3]/div/div/div[2]/div/div[2]/div/div/div/div/div[7]/div/div[3]/button/div'
+		self.acceptMature = '//*[@id="root"]/div/div[2]/div[1]/main/div[2]/div[3]/div/div/div[2]/div/div[2]/div/div/div/div/div[5]/div/div[3]/button/div'
 		self.Cookie = cookies
 		self.driver = driver
 		self.LoggingIn = False
@@ -50,7 +55,7 @@ class API:
 		if anti_leak:
 			self.driver.close()
 			self.driver.quit()
-			self.driver = webdriver.Chrome("driver" + os.path.sep + "chromedriver")
+			self.driver = webdriver.Chrome("driver" + os.path.sep + "chromedriver", options=options)
 		self.driver.get(self.TwitchPath)
 		for x in self.Cookie:
 			self.driver.add_cookie(x)
