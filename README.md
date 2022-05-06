@@ -26,15 +26,15 @@ you must load your twitch cookies correctly. the original tutorial for the maste
 
 # username
 
-you must update your username on line 45 of `API.py`. please make sure it is all lowercase
+you must update your username on line 50 of `API.py`. please make sure it is all lowercase
 
 # minutes to watch
 
-at the time of writing this readme, rust drops require 3 hours of watchtime per streamer. this value can be updated on line 18 of `API.py`
+at the time of writing this readme, rust drops require 3 hours of watchtime per streamer. this value can be updated on line 23 of `API.py`
 
 # game to watch
 
-this script can be repurposed. you can change the name of the game on line 27 of `API.py`. please make sure it is all lowercase
+this script can be repurposed. you can change the name of the game on line 32 of `API.py`. please make sure it is all lowercase
 
 # streamers.txt
 
@@ -52,6 +52,10 @@ streamer6 44.0
 
 the numbers (can be float or int) are equivalent to minutes watched. 
 you must create the streamers.txt file accordingly. it will update itself every 10 minutes.
+
+# headlessness
+
+by default, this script runs in headless mode, meaning that no visible browser window will be created. this might be counter-productive for debugging purposes: in order to disable it, comment line 9 in `main.py` and line 11 in `API.py`.
 
 # run
 
