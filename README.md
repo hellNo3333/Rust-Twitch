@@ -5,7 +5,7 @@ a fork of a python selenium-based twitch drop bot.
 # required libraries
 
 you need selenium to use this script.
-`py -m pip install selenium` (obviously you need to have [python](https://www.python.org/) installed too.)
+paste `py -m pip install selenium` in a cmd window (obviously you need to have [python](https://www.python.org/) installed too.)
 
 # driver
 
@@ -14,7 +14,7 @@ chromedriver is required to use this script. although it can be easily changed t
 download here: https://chromedriver.chromium.org/
 
 you must make sure that you have chrome installed and the chromedriver version matches with your chrome installation.
-create the `drivers` directory and drop the chromedriver executable there.
+create the `driver` directory and drop the chromedriver executable there.
 
 # memory leaks
 
@@ -50,6 +50,7 @@ streamer5 170.0
 streamer6 44.0
 ```
 
+replace the names (streamer1, streamer2, and so on) with the names of the streamers you want to watch
 the numbers (can be float or int) are equivalent to minutes watched. 
 you must create the streamers.txt file accordingly. it will update itself every 10 minutes.
 
