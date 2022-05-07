@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium import webdriver   
 import time
 import os
+import math
 
 anti_leak = True
 
@@ -72,7 +73,7 @@ class API:
 
 
 	def CreateTimer(self, streamer: str) -> bool:
-		steps = int((-self.StreamerList[streamer] + self.minutesToWatch)/10)
+		steps = math.ceil((-self.StreamerList[streamer] + self.minutesToWatch)/10)
 		for x in range(steps):
 			print("BA %d/%d" % (x, steps))
 			if not self.gotoStreamer(streamer):
