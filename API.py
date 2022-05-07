@@ -99,6 +99,8 @@ class API:
 
 	def BagItem(self):
 		Bagged = False
+		for x in self.Cookie:
+			self.driver.add_cookie(x)
 		self.driver.get("https://www.twitch.tv/drops/inventory")
 		time.sleep(15)
 		while True:
