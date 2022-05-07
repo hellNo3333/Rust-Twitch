@@ -17,6 +17,7 @@ class API:
 		self.Live = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
 		self.isRust = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
 		self.acceptMature = '//button[@data-a-target="player-overlay-mature-accept"]/div'
+		self.claimNow = '//button[@data-test-selector="DropsCampaignInProgressRewardPresentation-claim-button"]/div/div[2]'
 		self.Cookie = cookies
 		self.driver = driver
 		self.LoggingIn = False
@@ -101,8 +102,8 @@ class API:
 		self.driver.get("https://www.twitch.tv/drops/inventory")
 		time.sleep(15)
 		while True:
-			if self.check_if_exists("//div[text()='Claim Now']"):
-				self.driver.find_element_by_xpath("//div[text()='Claim Now']").click()
+			if self.check_if_exists(self.claimNow):
+				self.driver.find_element_by_xpath(self.claimNow).click()
 				Bagged = True
 			else:
 				break
