@@ -59,6 +59,9 @@ class API:
 		self.driver.get(self.TwitchPath)
 		for x in self.Cookie:
 			self.driver.add_cookie(x)
+		
+		self.driver.execute_script("""localStorage["video-quality"] = '{"default": "160p30"}'; localStorage["mature"] = 'true';""")
+		
 		self.driver.get(self.TwitchPath + streamer)
 		time.sleep(15)
 		print(self.check_if_exists(self.Live))
@@ -68,7 +71,7 @@ class API:
 
 
 	def CreateTimer(self, streamer: str) -> bool:
-		steps = int((-self.StreamerList[streamer] + self.minutesToWatch)/10)+1
+		steps = int((-self.StreamerList[streamer] + self.minutesToWatch)/10)
 		for x in range(steps):
 			print("BA %d/%d" % (x, steps))
 			if not self.gotoStreamer(streamer):
