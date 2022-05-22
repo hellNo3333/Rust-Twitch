@@ -13,7 +13,7 @@ chromedriver is required to use this script. although it can be easily changed t
 
 download here: https://chromedriver.chromium.org/
 
-you must make sure that you have chrome installed and the chromedriver version matches with your chrome installation.
+you must make sure that you have chrome installed and that the chromedriver version matches with your chrome installation.
 create the `driver` directory and drop the chromedriver executable there.
 
 # memory leaks
@@ -50,8 +50,8 @@ streamer5 170.0
 streamer6 44.0
 ```
 
-replace the names (streamer1, streamer2, and so on) with the names of the streamers you want to watch
-the numbers (can be float or int) are equivalent to minutes watched. 
+replace the names (streamer1, streamer2, and so on) with the names of the streamers you want to watch. the numbers (can be float or int) are equivalent to minutes watched. 
+
 you must create the streamers.txt file accordingly. it will update itself every 10 minutes.
 
 # headlessness
