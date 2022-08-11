@@ -15,8 +15,8 @@ options.add_argument("--headless")
 class API:
 	def __init__(self, driver):
 		self.TwitchPath = "https://twitch.tv/"
-		self.Live = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
-		self.isRust = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
+		self.Live = '//*[@id="live-channel-stream-information"]/div/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
+		self.isRust = '//*[@id="live-channel-stream-information"]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
 		self.acceptMature = '//button[@data-a-target="player-overlay-mature-accept"]/div'
 		self.claimNow = '//button[@data-test-selector="DropsCampaignInProgressRewardPresentation-claim-button"]/div/div[2]'
 		self.Cookie = cookies
