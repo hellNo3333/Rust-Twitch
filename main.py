@@ -8,6 +8,7 @@ import os
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--mute-audio")
+options.add_argument("window-size=1200x600")
 
 def main():
 	res = False
