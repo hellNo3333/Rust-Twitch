@@ -11,6 +11,7 @@ anti_leak = True
 options = Options()
 options.add_argument("--mute-audio")
 options.add_argument("--headless")
+options.add_argument("window-size=1200x600")
 
 class API:
 	def __init__(self, driver):
