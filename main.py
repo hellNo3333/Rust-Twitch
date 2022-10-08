@@ -9,6 +9,7 @@ options = Options()
 options.add_argument("--headless")
 options.add_argument("--mute-audio")
 options.add_argument("window-size=1200x600")
+options.add_argument("--disable-blink-features=AutomationControlled")     # LOL
 
 def main():
 	res = False
