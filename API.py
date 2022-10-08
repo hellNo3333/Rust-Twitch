@@ -11,10 +11,17 @@ anti_leak = True
 options = Options()
 options.add_argument("--mute-audio")
 options.add_argument("--headless")
-options.add_argument("window-size=1200x600")
-options.add_argument("--disable-blink-features=AutomationControlled")     # LOL
+options.add_argument("start-maximized")
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+options.add_argument("--disable-blink-features=AutomationControlled")
+
 
 class API:
+	def driver_executor(self):
+		self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+		self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36'})
+		
 	def __init__(self, driver):
 		self.TwitchPath = "https://twitch.tv/"
 		self.Live = '//*[@id="live-channel-stream-information"]/div/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
@@ -23,8 +30,9 @@ class API:
 		self.claimNow = '//button[@data-test-selector="DropsCampaignInProgressRewardPresentation-claim-button"]/div/div[2]'
 		self.Cookie = cookies
 		self.driver = driver
+		self.driver_executor()
 		self.LoggingIn = False
-		self.minutesToWatch = 190
+		self.minutesToWatch = 130
 		self.StreamerList = {}
 		
 		with open("streamers.txt", "r") as f:
@@ -60,6 +68,7 @@ class API:
 			self.driver.close()
 			self.driver.quit()
 			self.driver = webdriver.Chrome("driver" + os.path.sep + "chromedriver", options=options)
+			self.driver_executor()
 		self.driver.get(self.TwitchPath)
 		for x in self.Cookie:
 			self.driver.add_cookie(x)
