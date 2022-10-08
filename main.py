@@ -8,8 +8,10 @@ import os
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--mute-audio")
-options.add_argument("window-size=1200x600")
-options.add_argument("--disable-blink-features=AutomationControlled")     # LOL
+options.add_argument("start-maximized")
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+options.add_argument("--disable-blink-features=AutomationControlled")
 
 def main():
 	res = False
