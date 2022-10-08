@@ -22,6 +22,13 @@ class API:
 		self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 		self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36'})
 		
+		self.driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
+			"source":
+			"Object.defineProperty(navigator, 'plugins', { \
+				get: () => [1, 2, 3, 4, 5] \
+			});"
+		})
+
 	def __init__(self, driver):
 		self.TwitchPath = "https://twitch.tv/"
 		self.Live = '//*[@id="live-channel-stream-information"]/div/div/div/div/div[1]/div/div/div/a/div[2]/div/div/div'
