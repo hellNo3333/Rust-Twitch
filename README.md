@@ -62,7 +62,7 @@ update: as of 2022/09/09, due to twitch detection updates, this script only work
 
 # desktop environments
 
-as of 2022/08/11, this script performs as expected on servers without a desktop environment. please make sure to install chrome (or whatever other browser you choose to use) and remember to match versions with the driver.
+~~as of 2022/08/11, this script performs as expected on servers without a desktop environment. please make sure to install chrome (or whatever other browser you choose to use) and remember to match versions with the driver.~~ no longer works as of 2022/09/09
 
 # run
 
