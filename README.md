@@ -58,11 +58,11 @@ you must create the streamers.txt file accordingly. it will update itself every 
 
 by default, this script runs in headless mode, meaning that no visible browser window will be created. this might be counter-productive for debugging purposes: in order to disable it, comment line 9 in `main.py` and line 11 in `API.py`.
 
-update: as of 2022/09/09, due to twitch detection updates, this script only works in non headless mode.
+update: as of 2022/10/08, due to twitch detection updates, this script only works in non headless mode.
 
 # desktop environments
 
-~~as of 2022/08/11, this script performs as expected on servers without a desktop environment. please make sure to install chrome (or whatever other browser you choose to use) and remember to match versions with the driver.~~ no longer works as of 2022/09/09
+~~as of 2022/08/11, this script performs as expected on servers without a desktop environment. please make sure to install chrome (or whatever other browser you choose to use) and remember to match versions with the driver.~~ no longer works as of 2022/10/08
 
 # run
 
