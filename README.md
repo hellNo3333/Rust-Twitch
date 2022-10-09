@@ -2,6 +2,10 @@
 
 a fork of a python selenium-based twitch drop bot.
 
+# currently not working
+
+as of 2022/10/09, because of continuous twitch detection updates, this bot no longer works.
+
 # required libraries
 
 you need selenium to use this script.
